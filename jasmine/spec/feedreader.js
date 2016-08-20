@@ -116,7 +116,7 @@ $(function() {
 
     describe('New Feed Selection',function(){
         var text;
-
+        // loadFeed twice before it() is called
         beforeAll(function(done){
           loadFeed(0,done);
           text = $('.entry').text();
