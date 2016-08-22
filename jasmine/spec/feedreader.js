@@ -80,10 +80,10 @@ $(function() {
 		it('menu appears and hides when clicked', function(){
 
 			$('.icon-list').click();
-				expect($('body').attr('class')).not.toBe('menu-hidden');
+				expect($('body').hasClass('menu-hidden')).toBeFalsy();
 
 			$('.icon-list').click();
-				expect($('body').attr('class')).toBe('menu-hidden');
+				expect($('body').hasClass('menu-hidden')).toBeTruthy();
 		});
 	});
 
@@ -104,7 +104,7 @@ $(function() {
 
 		it('there is at least one entry in the feed container',function(){
 
-			expect($('.feed').children().length).not.toBe(0);
+			expect($('.feed .entry').children().length).not.toBe(0);
 
 		});
 	});
@@ -120,7 +120,7 @@ $(function() {
 				firstFeed = $('.entry').text();
 				loadFeed(1,function(){
 					done();
-				})
+				});
 			});
 		});
 
